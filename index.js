@@ -3,6 +3,7 @@ const app = express();
 const connection = require("./database/database");
 const Pergunta = require('./database/Pergunta');
 const Resposta = require('./database/Resposta');
+const PORT = process.env.PORT || 8080;
 
 connection
       .authenticate()
@@ -81,6 +82,6 @@ app.post("/responder", (req, res) => {
   })
 });
 
-app.listen(8080, ()=>{
+app.listen(PORT, ()=>{
   console.log('app rodando!!');
 });
